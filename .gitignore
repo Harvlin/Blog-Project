@@ -1,0 +1,7 @@
+/blog-be/target/
+/blog-be/.idea/
+/blog-be/.classpath
+/blog-be/.project
+
+/blog-fe/node_modules/
+/blog-fe/build/

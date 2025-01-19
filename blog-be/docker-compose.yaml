@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: passwordindevelopment
+      MYSQL_DATABASE: BlogProject
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8888:8080
