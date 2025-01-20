@@ -1,0 +1,12 @@
+package com.project.blog_be.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+@Component
+public interface AuthenticationService {
+
+    UserDetails authenticate(String email, String password);
+
+    String generateToken(UserDetails userDetails);
+}
