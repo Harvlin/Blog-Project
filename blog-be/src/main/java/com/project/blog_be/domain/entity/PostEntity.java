@@ -31,6 +31,7 @@ public class PostEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
+    @Getter
     private PostStatus status;
 
     @Column(nullable = false)

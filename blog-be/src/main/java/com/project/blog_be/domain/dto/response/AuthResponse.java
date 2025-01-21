@@ -1,4 +1,4 @@
-package com.project.blog_be.domain.dto;
+package com.project.blog_be.domain.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

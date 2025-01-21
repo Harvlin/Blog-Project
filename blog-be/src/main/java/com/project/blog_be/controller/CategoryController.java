@@ -1,7 +1,7 @@
 package com.project.blog_be.controller;
 
 import com.project.blog_be.domain.dto.CategoryDto;
-import com.project.blog_be.domain.dto.CreateCategoryRequest;
+import com.project.blog_be.domain.dto.request.CreateCategoryRequest;
 import com.project.blog_be.domain.entity.CategoryEntity;
 import com.project.blog_be.mappers.CategoryMapper;
 import com.project.blog_be.service.CategoryService;

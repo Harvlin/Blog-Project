@@ -1,4 +1,4 @@
-package com.project.blog_be.domain.dto;
+package com.project.blog_be.domain.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
