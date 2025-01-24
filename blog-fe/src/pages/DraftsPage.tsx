@@ -89,5 +89,4 @@ const DraftsPage: React.FC = () => {
     </div>
   );
 };
-
 export default DraftsPage;
