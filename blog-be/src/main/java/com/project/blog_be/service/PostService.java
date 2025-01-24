@@ -11,5 +11,4 @@ public interface PostService {
 
     List<PostEntity> getAllPost(UUID catId, UUID tagId);
     List<PostEntity> getDraftPosts(UserEntity user);
-    PostEntity createPost(UserEntity userEntity, CreatePostRequest createPostRequest);
 }

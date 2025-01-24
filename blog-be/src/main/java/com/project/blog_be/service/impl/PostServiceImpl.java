@@ -53,22 +53,5 @@ public class PostServiceImpl implements PostService {
     public List<PostEntity> getDraftPosts(UserEntity user) {
         return postRepository.findAllByAuthorAndStatus(user, PostStatus.DRAFT);
     }
-
-    @Override
-    public PostEntity createPost(UserEntity userEntity, CreatePostRequest createPostRequest) {
-        PostEntity newPost = new PostEntity();
-        newPost.setTitle(createPostRequest.getTitle());
-        newPost.setContent(createPostRequest.getContent());
-        newPost.setStatus(createPostRequest.getStatus());
-        newPost.setAuthor(userEntity);
-        newPost.setReadingTime(calculateReadingTime(createPostRequest.getContent()));
-
-        CategoryEntity categoryEntity = categoryService.getCategoryById(createPostRequest.getCategoryId());
-        newPost.setCategory(categoryEntity);
-
-        Set<UUID> tagIds = createPostRequest.getTagIds();
-        List<TagEntity> tags = tagService.getTagById(tagIds);
-        newPost.setTags(new HashSet<>(tags));
-        return postRepository.save(newPost);
-    }
 }
+

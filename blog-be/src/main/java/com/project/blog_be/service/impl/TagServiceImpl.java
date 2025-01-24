@@ -40,7 +40,7 @@ public class TagServiceImpl implements TagService {
                 .toList();
 
         List<TagEntity> savedTags = new ArrayList<>();
-        if(!newTags.isEmpty()) {
+        if (!newTags.isEmpty()) {
             savedTags = tagRepository.saveAll(newTags);
         }
 
@@ -60,5 +60,9 @@ public class TagServiceImpl implements TagService {
     @Override
     public TagEntity getTagById(UUID id) {
         return tagRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Tag not found with id " + id));
+    }
+
+    public List<TagEntity> getTagById(Set<UUID> ids) {
+        return tagRepository.findAllById(ids);
     }
 }
