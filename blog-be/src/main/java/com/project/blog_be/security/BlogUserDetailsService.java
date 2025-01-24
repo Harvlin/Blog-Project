@@ -19,5 +19,4 @@ public class BlogUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email " + email));
         return new BlogUserDetails(user);
     }
-
 }

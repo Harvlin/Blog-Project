@@ -7,11 +7,12 @@ import com.project.blog_be.mappers.PostMapper;
 import com.project.blog_be.service.PostService;
 import com.project.blog_be.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping(path = "/api/v1/posts")
@@ -36,4 +37,5 @@ public class PostController {
         List<PostDto> list = draftPosts.stream().map(postMapper::toDto).toList();
         return ResponseEntity.ok(list);
     }
+
 }

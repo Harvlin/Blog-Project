@@ -1,6 +1,7 @@
 package com.project.blog_be.service.impl;
 
 import com.project.blog_be.domain.PostStatus;
+import com.project.blog_be.domain.dto.CreatePostRequest;
 import com.project.blog_be.domain.entity.CategoryEntity;
 import com.project.blog_be.domain.entity.PostEntity;
 import com.project.blog_be.domain.entity.TagEntity;
@@ -13,7 +14,9 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -49,5 +52,23 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostEntity> getDraftPosts(UserEntity user) {
         return postRepository.findAllByAuthorAndStatus(user, PostStatus.DRAFT);
+    }
+
+    @Override
+    public PostEntity createPost(UserEntity userEntity, CreatePostRequest createPostRequest) {
+        PostEntity newPost = new PostEntity();
+        newPost.setTitle(createPostRequest.getTitle());
+        newPost.setContent(createPostRequest.getContent());
+        newPost.setStatus(createPostRequest.getStatus());
+        newPost.setAuthor(userEntity);
+        newPost.setReadingTime(calculateReadingTime(createPostRequest.getContent()));
+
+        CategoryEntity categoryEntity = categoryService.getCategoryById(createPostRequest.getCategoryId());
+        newPost.setCategory(categoryEntity);
+
+        Set<UUID> tagIds = createPostRequest.getTagIds();
+        List<TagEntity> tags = tagService.getTagById(tagIds);
+        newPost.setTags(new HashSet<>(tags));
+        return postRepository.save(newPost);
     }
 }
