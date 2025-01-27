@@ -1,4 +1,4 @@
-package com.project.blog_be.domain.dto;
+package com.project.blog_be.domain.dto.request;
 
 import com.project.blog_be.domain.PostStatus;
 import lombok.AllArgsConstructor;
@@ -24,5 +24,5 @@ public class CreatePostRequest {
     @Builder.Default
     private Set<UUID> tagIds = new HashSet<>();
 
-    private PostStatus status;
+    private PostStatus postStatus;
 }

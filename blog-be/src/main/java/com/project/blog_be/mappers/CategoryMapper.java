@@ -25,6 +25,6 @@ public interface CategoryMapper {
         if (null == posts) {
             return 0;
         }
-        return posts.stream().filter(postEntity -> PostStatus.PUBLISHED.equals(postEntity.getStatus())).count();
+        return posts.stream().filter(postEntity -> PostStatus.PUBLISHED.equals(postEntity.getPostStatus())).count();
     }
 }

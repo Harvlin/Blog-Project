@@ -13,9 +13,9 @@ import java.util.UUID;
 
 @Repository
 public interface PostRepository extends JpaRepository<PostEntity, UUID> {
-    List<PostEntity> findAllByStatusAndCategoryAndTagsContaining(PostStatus postStatus, CategoryEntity categoryEntity, TagEntity tagEntity);
-    List<PostEntity> findAllByStatusAndCategory(PostStatus postStatus, CategoryEntity categoryEntity);
-    List<PostEntity> findAllByStatusAndTagsContaining(PostStatus postStatus, TagEntity tagEntity);
-    List<PostEntity> findAllByStatus(PostStatus postStatus);
-    List<PostEntity> findAllByAuthorAndStatus(UserEntity author, PostStatus postStatus);
+    List<PostEntity> findAllByPostStatusAndCategoryAndTagsContaining(PostStatus postStatus, CategoryEntity categoryEntity, TagEntity tagEntity);
+    List<PostEntity> findAllByPostStatusAndCategory(PostStatus postStatus, CategoryEntity categoryEntity);
+    List<PostEntity> findAllByPostStatusAndTagsContaining(PostStatus postStatus, TagEntity tagEntity);
+    List<PostEntity> findAllByPostStatus(PostStatus postStatus);
+    List<PostEntity> findAllByAuthorAndPostStatus(UserEntity author, PostStatus postStatus);
 }

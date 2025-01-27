@@ -32,7 +32,7 @@ public class PostEntity {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     @Getter
-    private PostStatus status;
+    private PostStatus postStatus;
 
     @Column(nullable = false)
     private Integer readingTime;
@@ -64,12 +64,12 @@ public class PostEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PostEntity that = (PostEntity) o;
-        return Objects.equals(id, that.id) && Objects.equals(title, that.title) && Objects.equals(content, that.content) && status == that.status && Objects.equals(readingTime, that.readingTime) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return Objects.equals(id, that.id) && Objects.equals(title, that.title) && Objects.equals(content, that.content) && postStatus == that.postStatus && Objects.equals(readingTime, that.readingTime) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, content, status, readingTime, createdAt, updatedAt);
+        return Objects.hash(id, title, content, postStatus, readingTime, createdAt, updatedAt);
     }
 
     @PrePersist

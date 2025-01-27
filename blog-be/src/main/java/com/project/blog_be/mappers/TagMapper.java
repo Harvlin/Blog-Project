@@ -23,7 +23,7 @@ public interface TagMapper {
             return 0;
         }
         return (int) posts.stream()
-                .filter(postEntity -> PostStatus.PUBLISHED.equals(postEntity.getStatus()))
+                .filter(postEntity -> PostStatus.PUBLISHED.equals(postEntity.getPostStatus()))
                 .count();
     }
 }
