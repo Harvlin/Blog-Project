@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useNavigation } from 'react-router-dom';
-import { Card, CardBody, CardFooter, CardHeader, Chip, Pagination, Select, SelectItem } from '@nextui-org/react';
+import { Card, CardBody, CardFooter, CardHeader, Chip, Pagination, Select, SelectItem } from "@heroui/react";
 import { Post } from '../services/apiService';
 import { Calendar, Clock, Tag } from 'lucide-react';
 import DOMPurify from 'dompurify';

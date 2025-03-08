@@ -10,7 +10,7 @@ import {
   Button,
   Divider,
   Avatar,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { 
   Calendar,
   Clock,

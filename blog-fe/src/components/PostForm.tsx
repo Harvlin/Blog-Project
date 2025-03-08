@@ -12,7 +12,7 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Heading from '@tiptap/extension-heading';
@@ -333,7 +333,7 @@ const PostForm: React.FC<PostFormProps> = ({
               Cancel
             </Button>
             <Button
-              color="primary"
+              color="success"
               type="submit"
               isLoading={isSubmitting}
             >

@@ -5,7 +5,7 @@ import {
   CardBody,
   Tabs, 
   Tab,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { apiService, Post, Category, Tag } from '../services/apiService';
 import PostList from '../components/PostList';
 

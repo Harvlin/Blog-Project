@@ -18,7 +18,7 @@ import {
   ModalBody,
   ModalFooter,
   Tooltip,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { Plus, Edit2, Trash2 } from "lucide-react";
 import { apiService, Category } from "../services/apiService";
 

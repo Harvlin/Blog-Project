@@ -5,7 +5,7 @@ import {
   CardBody,
   CardHeader,
   Button,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { ArrowLeft } from 'lucide-react';
 import { apiService, Post, Category, Tag, PostStatus } from '../services/apiService';
 import PostForm from '../components/PostForm';

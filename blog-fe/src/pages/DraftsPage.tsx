@@ -4,7 +4,7 @@ import {
   CardHeader,
   CardBody,
   Button,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { apiService, Post } from '../services/apiService';

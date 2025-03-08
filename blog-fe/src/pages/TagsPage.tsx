@@ -19,7 +19,7 @@ import {
   ModalFooter,
   Chip,
   Tooltip,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { Plus, Trash2, X } from "lucide-react";
 import { apiService, Tag } from "../services/apiService";
 

@@ -14,8 +14,9 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { Plus, BookOpen, Edit3, LogOut, User, BookDashed } from 'lucide-react';
+import {ThemeSwitcher} from "./ThemeSwitcher.tsx";
 
 interface NavBarProps {
   isAuthenticated: boolean;
@@ -98,12 +99,15 @@ const NavBar: React.FC<NavBarProps> = ({
               <Button
                 as={Link}
                 to="/posts/new"
-                color="primary"
+                color="success"
                 variant="flat"
                 startContent={<Plus size={16} />}
               >
                 New Post
               </Button>
+            </NavbarItem>
+            <NavbarItem>
+              <ThemeSwitcher />
             </NavbarItem>
             <NavbarItem>
               <Dropdown placement="bottom-end">
